@@ -1,0 +1,13 @@
+name: Global Reverse Tunnel
+on: workflow_dispatch
+
+jobs:
+  run-tunnel:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Launch Persistent Tunnel
+      run: |
+        echo "جاري تشغيل النفق العالمي المستمر والمقاوم للانقطاع..."
+        # تثبيت الأداة وتشغيل النفق فوراً على منفذ التحكم العكسي 22
+        sudo npm install -g localtunnel
+        lt --port 22
