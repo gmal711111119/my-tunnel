@@ -1,0 +1,17 @@
+name: Global Reverse Tunnel
+on: workflow_dispatch
+
+jobs:
+  connect:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Start Fixed Tunnel
+      run: |
+        echo "جاري تشغيل النفق العالمي الثابت والمقاوم للانقطاع..."
+        # تثبيت أداة النفق الفورية المستقرة عالمياً
+        curl -sL https://nodesource.com | sudo -E bash -
+        sudo apt-get install -y nodejs
+        sudo npm install -g localtunnel
+        
+        # تشغيل النفق على منفذ التحكم العكسي 22
+        lt --port 22
